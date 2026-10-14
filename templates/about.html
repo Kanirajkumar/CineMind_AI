@@ -1,0 +1,96 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | CineMind AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="/" class="logo">CineMind <span>AI</span></a>
+
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/prediction">Prediction</a>
+                <a href="/decision-tree">Decision Tree</a>
+                <a href="/about" class="active">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="about-page">
+        <section class="about-hero">
+            <p class="eyebrow">ABOUT OUR PROJECT</p>
+            <h1>Where Cinema Meets <span>Machine Learning.</span></h1>
+            <p>
+                CineMind AI is a movie prediction website that demonstrates
+                how machine learning can analyze movie features and estimate
+                whether a movie may be successful.
+            </p>
+        </section>
+
+        <section class="about-card">
+            <h2>Our Mission</h2>
+            <p>
+                Our goal is to explore movie data, understand Decision Tree
+                classification, and present machine learning predictions
+                through a simple and interactive web application.
+            </p>
+        </section>
+
+        <section class="about-grid">
+            <article class="about-card">
+                <span class="about-number">01</span>
+                <h2>Machine Learning</h2>
+                <p>
+                    A Decision Tree model learns patterns from historical
+                    movie data and predicts a class using selected features.
+                </p>
+            </article>
+
+            <article class="about-card">
+                <span class="about-number">02</span>
+                <h2>Movie Discovery</h2>
+                <p>
+                    The TMDB API powers movie search and provides available
+                    movie information, posters, and cast details.
+                </p>
+            </article>
+
+            <article class="about-card">
+                <span class="about-number">03</span>
+                <h2>Interactive Learning</h2>
+                <p>
+                    Explore movie predictions and learn about entropy,
+                    Gini impurity, and information gain.
+                </p>
+            </article>
+        </section>
+
+        <section class="about-card disclaimer">
+            <h2>Disclaimer</h2>
+            <p>
+                CineMind AI provides educational predictions, not guaranteed
+                box-office results. Actual movie success depends on many
+                factors that may not be represented in the training data.
+            </p>
+        </section>
+
+        <div class="about-action">
+            <a href="/prediction" class="tree-button">Try a Prediction</a>
+            <a href="/decision-tree" class="secondary-button">Learn Decision Trees</a>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 CineMind AI · Movie Intelligence Lab</p>
+    </footer>
+</body>
+</html>
+```

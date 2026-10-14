@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Prediction | CineMind AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/prediction.css') }}">
+</head>
+<body>
+<header class="navbar">
+    <a class="logo" href="/"><span class="logo-mark">C</span><span>CineMind <b>AI</b></span></a>
+    <nav class="nav-links">
+        <a href="/">Home</a>
+        <a class="active" href="/prediction">Prediction</a>
+        <a href="/decision-tree">Decision Tree</a>
+        <a href="/about">About</a>
+    </nav>
+    <a class="nav-button" href="/#explore">Explore Movies ↗</a>
+</header>
+
+<main class="prediction-page">
+    <section class="prediction-hero">
+        <span class="eyebrow">MACHINE LEARNING LAB</span>
+        <h1>Predict a movie's <span>potential.</span></h1>
+        <p>Enter the movie details and let the trained Decision Tree model analyse the input.</p>
+    </section>
+
+    <section class="prediction-layout">
+        <form id="prediction-form" class="prediction-panel">
+            <div class="panel-heading">
+                <span class="panel-number">01</span>
+                <div>
+                    <h2>Movie information</h2>
+                    <p>Enter all three values to run the prediction.</p>
+                </div>
+            </div>
+
+            <label for="budget">Movie budget</label>
+            <div class="field-wrap">
+                <span>₹ / $</span>
+                <input id="budget" name="budget" type="number"
+                       min="1" step="any" placeholder="e.g. 50000000" required>
+            </div>
+            <small class="field-help">Use the same currency and scale as your training dataset.</small>
+
+            <label for="rating">Expected rating (0–10)</label>
+            <div class="field-wrap">
+                <span>★</span>
+                <input id="rating" name="rating" type="number"
+                       min="0" max="10" step="0.1" placeholder="e.g. 7.5" required>
+            </div>
+
+            <label for="runtime">Runtime in minutes</label>
+            <div class="field-wrap">
+                <span>◷</span>
+                <input id="runtime" name="runtime" type="number"
+                       min="1" step="1" placeholder="e.g. 145" required>
+            </div>
+
+            <button id="predict-button" class="button-primary predict-submit" type="submit">
+                Analyse Movie <span>↗</span>
+            </button>
+
+            <p class="form-note">This result is a model prediction, not a guarantee of box-office performance.</p>
+        </form>
+
+        <aside class="prediction-side">
+            <div class="result-panel">
+                <span class="eyebrow">MODEL OUTPUT</span>
+                <div class="result-symbol">✦</div>
+                <h2 id="result-title">Your result awaits.</h2>
+                <p id="result-message">Submit your movie information to receive a prediction from the trained model.</p>
+                <div id="result-class" class="result-tag">READY TO ANALYSE</div>
+            </div>
+
+            <div class="model-stats">
+                <div>
+                    <span>Model accuracy</span>
+                    <strong>{{ accuracy }}{% if accuracy is number %}%{% endif %}</strong>
+                </div>
+                <div>
+                    <span>Dataset records</span>
+                    <strong>{{ dataset_size }}</strong>
+                </div>
+                <div>
+                    <span>Algorithm</span>
+                    <strong>Decision Tree</strong>
+                </div>
+            </div>
+
+            <a class="tree-link" href="/decision-tree">
+                <span>⌘</span>
+                <div>
+                    <strong>Understand the model</strong>
+                    <p>Explore entropy, Gini impurity and information gain.</p>
+                </div>
+                <span>↗</span>
+            </a>
+        </aside>
+    </section>
+</main>
+
+<footer class="footer">
+    <a class="logo" href="/"><span class="logo-mark">C</span><span>CineMind <b>AI</b></span></a>
+    <p>Movie intelligence, powered by data and machine learning.</p>
+    <span>© 2026 CineMind AI</span>
+</footer>
+
+<script src="{{ url_for('static', filename='js/prediction.js') }}" defer></script>
+</body>
+</html>

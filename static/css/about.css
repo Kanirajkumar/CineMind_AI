@@ -1,0 +1,139 @@
+```css
+/* ===== CINEMIND AI - ABOUT PAGE ===== */
+
+.about-page {
+    width: min(1050px, 90%);
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+.about-hero {
+    text-align: center;
+    padding: 100px 0 65px;
+}
+
+.about-hero .eyebrow {
+    color: #bd5471;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.about-hero h1 {
+    max-width: 850px;
+    margin: 0 auto 24px;
+    color: #fff5f7;
+    font-size: clamp(36px, 6vw, 65px);
+    line-height: 1.15;
+}
+
+.about-hero h1 span {
+    color: #bd5471;
+}
+
+.about-hero > p:last-child {
+    max-width: 720px;
+    margin: 0 auto;
+    color: #b9aeb2;
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.about-card {
+    background: linear-gradient(145deg, #191115, #0e0b0d);
+    border: 1px solid #42202b;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 22px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+    border-color: #a62e50;
+}
+
+.about-card h2 {
+    color: #f3a0b6;
+    font-size: 23px;
+    margin: 0 0 15px;
+}
+
+.about-card p {
+    color: #c2b5ba;
+    line-height: 1.9;
+    margin: 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.about-grid .about-card {
+    margin-bottom: 0;
+}
+
+.about-number {
+    display: inline-block;
+    color: #bd5471;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.disclaimer {
+    border-left: 3px solid #a62e50;
+}
+
+.about-action {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.about-action a {
+    display: inline-block;
+    padding: 14px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.25s ease;
+}
+
+.about-action .tree-button {
+    color: #fff;
+    background: linear-gradient(135deg, #68132d, #a62e50);
+    border: 1px solid #bd5471;
+}
+
+.secondary-button {
+    color: #f3a0b6;
+    border: 1px solid #572235;
+    background: #171114;
+}
+
+.about-action a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px #7b173433;
+}
+
+@media (max-width: 760px) {
+    .about-hero {
+        padding: 60px 0 40px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        padding: 24px;
+    }
+}
+```

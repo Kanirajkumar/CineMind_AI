@@ -1,0 +1,281 @@
+
+.prediction-page {
+    min-height: 75vh;
+    padding: 65px 9% 100px;
+}
+
+.prediction-hero {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 48px;
+}
+
+.prediction-hero h1 {
+    margin-top: 15px;
+    font-size: clamp(34px, 5vw, 55px);
+    line-height: 1.2;
+    letter-spacing: -2px;
+}
+
+.prediction-hero h1 span {
+    color: #bd5471;
+}
+
+.prediction-hero > p {
+    margin: 16px auto 0;
+    max-width: 590px;
+    color: #a99da1;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.prediction-layout {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+    align-items: start;
+}
+
+.prediction-panel,
+.result-panel,
+.model-stats,
+.tree-link {
+    background: #111011;
+    border: 1px solid #332329;
+    border-radius: 17px;
+}
+
+.prediction-panel {
+    padding: 30px;
+}
+
+.panel-heading {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.panel-number {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    flex-shrink: 0;
+    background: #4a0e203f;
+    border: 1px solid #7b173455;
+    border-radius: 11px;
+    color: #e5a0b5;
+    font-weight: 800;
+}
+
+.panel-heading h2 {
+    font-size: 18px;
+}
+
+.panel-heading p,
+.form-note {
+    color: #a99da1;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.prediction-panel label {
+    display: block;
+    margin: 22px 0 9px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.field-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 14px;
+    background: #090809;
+    border: 1px solid #38252c;
+    border-radius: 10px;
+    color: #d889a0;
+}
+
+.field-wrap:focus-within {
+    border-color: #a52a4b;
+    box-shadow: 0 0 0 3px #7b17341b;
+}
+
+.field-wrap input {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #f7f0f2;
+    font-size: 13px;
+}
+
+.field-wrap input::placeholder {
+    color: #71656a;
+}
+
+.field-help {
+    display: block;
+    color: #95868c;
+    font-size: 10px;
+    margin-top: 8px;
+    line-height: 1.6;
+}
+
+.predict-submit {
+    width: 100%;
+    margin-top: 28px;
+    border: 0;
+    cursor: pointer;
+}
+
+.predict-submit:disabled {
+    opacity: .65;
+    cursor: wait;
+}
+
+.form-note {
+    margin-top: 15px;
+    line-height: 1.7;
+}
+
+.prediction-side {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.result-panel {
+    padding: 28px;
+    min-height: 290px;
+    background:
+        radial-gradient(ellipse at 50% 0%, #4a0e2042, transparent 60%),
+        #111011;
+}
+
+.result-symbol {
+    margin-top: 24px;
+    color: #d889a0;
+    font-size: 35px;
+}
+
+.result-panel h2 {
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.result-panel > p {
+    margin-top: 9px;
+    color: #a99da1;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.result-tag {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 7px 10px;
+    background: #4a0e203d;
+    border: 1px solid #7b173455;
+    border-radius: 7px;
+    color: #e6a9ba;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.result-tag.success {
+    color: #f1b6c7;
+    border-color: #a52a4b;
+}
+
+.result-tag.warning {
+    color: #d7c0c5;
+    border-color: #6a4853;
+}
+
+.model-stats {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.model-stats > div:last-child {
+    grid-column: 1 / -1;
+}
+
+.model-stats span,
+.model-stats strong {
+    display: block;
+}
+
+.model-stats span {
+    color: #a99da1;
+    font-size: 10px;
+}
+
+.model-stats strong {
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.tree-link {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 18px;
+    transition: border-color .2s ease, transform .2s ease;
+}
+
+.tree-link:hover {
+    border-color: #8d2c49;
+    transform: translateY(-2px);
+}
+
+.tree-link > span {
+    color: #d889a0;
+    font-size: 22px;
+}
+
+.tree-link > div {
+    flex: 1;
+}
+
+.tree-link strong {
+    font-size: 12px;
+}
+
+.tree-link p {
+    margin-top: 4px;
+    color: #a99da1;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+    .prediction-page {
+        padding: 50px 6% 70px;
+    }
+
+    .prediction-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    .prediction-panel,
+    .result-panel {
+        padding: 21px;
+    }
+
+    .prediction-hero h1 {
+        letter-spacing: -1px;
+    }
+}

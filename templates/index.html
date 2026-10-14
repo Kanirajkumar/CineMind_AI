@@ -1,0 +1,462 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#090609">
+
+    <title>CineMind AI | Cinema Intelligence</title>
+
+    <meta name="description"
+          content="Explore cinema with AI-powered movie success prediction and movie intelligence.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}?v=10">
+
+    <script src="{{ url_for('static', filename='js/app.js') }}?v=10"
+            defer></script>
+</head>
+
+<body>
+
+    <!-- Animated background -->
+    <div class="ambient-background" aria-hidden="true">
+        <div class="ambient-orb orb-one"></div>
+        <div class="ambient-orb orb-two"></div>
+        <div class="ambient-orb orb-three"></div>
+        <div class="ambient-grid"></div>
+    </div>
+
+    <div class="particle-layer" id="particle-layer"
+         aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <header class="site-header" id="site-header">
+        <nav class="navbar container">
+
+            <a href="/" class="brand" aria-label="CineMind AI Home">
+                <span class="brand-symbol">C</span>
+                <span class="brand-name">
+                    CineMind<span>AI</span>
+                </span>
+            </a>
+
+            <button class="menu-toggle"
+                    id="menu-toggle"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="nav-links">
+                <a class="nav-link active" href="/">Home</a>
+                <a class="nav-link" href="/prediction">Prediction</a>
+                <a class="nav-link" href="/decision-tree">Decision Tree</a>
+                <a class="nav-link" href="/about">About</a>
+                <a class="nav-cta" href="/prediction">
+                    Explore AI <span>↗</span>
+                </a>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero section -->
+        <section class="hero-section" id="home">
+
+            <div class="hero-light" aria-hidden="true"></div>
+
+            <div class="container hero-layout">
+
+                <div class="hero-content">
+
+                    <div class="eyebrow reveal">
+                        <span class="status-dot"></span>
+                        <span>MOVIE INTELLIGENCE LAB</span>
+                        <span class="eyebrow-line"></span>
+                    </div>
+
+                    <h1 class="hero-title reveal">
+                        Every movie has
+                        <span class="title-second-line">
+                            a story.<br>
+                            <span class="gradient-text">
+                                We predict its
+                            </span>
+                            <span class="title-italic">power.</span>
+                        </span>
+                    </h1>
+
+                    <p class="hero-description reveal">
+                        Discover cinema through data. Explore movies,
+                        analyse the factors behind success, and uncover
+                        the intelligence hidden inside every film.
+                    </p>
+
+                    <div class="hero-actions reveal">
+                        <a href="/prediction" class="button-primary">
+                            <span>Explore Predictions</span>
+                            <span class="button-arrow">↗</span>
+                        </a>
+
+                        <a href="#movie-explorer" class="button-secondary">
+                            Discover Movies
+                            <span>↓</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-trust reveal">
+                        <span class="trust-icon">✦</span>
+                        <span>Machine Learning</span>
+                        <span class="trust-divider"></span>
+                        <span>Decision Tree Intelligence</span>
+                    </div>
+
+                </div>
+
+                <!-- Decorative cinematic artwork -->
+                <div class="hero-visual reveal">
+
+                    <div class="visual-orbit orbit-outer"></div>
+                    <div class="visual-orbit orbit-inner"></div>
+
+                    <div class="visual-glow"></div>
+
+                    <div class="cinema-artwork">
+
+                        <div class="artwork-topline">
+                            <span>CINEMATIC INTELLIGENCE</span>
+                            <span>CM—01</span>
+                        </div>
+
+                        <div class="artwork-center">
+                            <div class="film-reel">
+                                <div class="reel-center"></div>
+                                <span class="reel-hole hole-one"></span>
+                                <span class="reel-hole hole-two"></span>
+                                <span class="reel-hole hole-three"></span>
+                                <span class="reel-hole hole-four"></span>
+                                <span class="reel-hole hole-five"></span>
+                                <span class="reel-hole hole-six"></span>
+                            </div>
+                        </div>
+
+                        <div class="artwork-caption">
+                            <span class="caption-small">
+                                BEYOND THE SCREEN
+                            </span>
+                            <span class="caption-large">
+                                CINEMA <i>REIMAGINED.</i>
+                            </span>
+                        </div>
+
+                        <div class="artwork-footer">
+                            <span>STORY × SCIENCE</span>
+                            <span class="artwork-pulse"></span>
+                            <span>EST. IN DATA</span>
+                        </div>
+
+                    </div>
+
+                    <div class="floating-card floating-card-top">
+                        <span class="floating-icon">✦</span>
+                        <div>
+                            <span class="floating-label">POWERED BY</span>
+                            <strong>Machine Learning</strong>
+                        </div>
+                    </div>
+
+                    <div class="floating-card floating-card-bottom">
+                        <span class="floating-icon">◈</span>
+                        <div>
+                            <span class="floating-label">DISCOVER</span>
+                            <strong>Movie Intelligence</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <a class="scroll-indicator" href="#movie-explorer">
+                <span class="scroll-line"></span>
+                <span>SCROLL TO EXPLORE</span>
+            </a>
+
+        </section>
+
+        <!-- Statistics -->
+        <section class="stats-section">
+            <div class="container stats-grid">
+
+                <article class="stat-item reveal">
+                    <span class="stat-label">OUR APPROACH</span>
+                    <h2>AI<span class="stat-dot">.</span></h2>
+                    <p>Data-driven movie analysis</p>
+                </article>
+
+                <article class="stat-item reveal">
+                    <span class="stat-label">LEARNING MODEL</span>
+                    <h2>DT<span class="stat-dot">.</span></h2>
+                    <p>Decision Tree classification</p>
+                </article>
+
+                <article class="stat-item reveal">
+                    <span class="stat-label">MOVIE DISCOVERY</span>
+                    <h2>∞</h2>
+                    <p>Explore cinema worldwide</p>
+                </article>
+
+                <article class="stat-item reveal">
+                    <span class="stat-label">OUR MISSION</span>
+                    <h2>01<span class="stat-dot">.</span></h2>
+                    <p>Understand movie success</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Movie Explorer -->
+        <section class="movie-section section-padding"
+                 id="movie-explorer">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <div>
+                        <span class="section-kicker">
+                            THE WORLD OF CINEMA
+                        </span>
+
+                        <h2>
+                            Find your next
+                            <span class="gradient-text">favourite.</span>
+                        </h2>
+
+                        <p>
+                            Search movies or actors and explore
+                            the stories behind the screen.
+                        </p>
+                    </div>
+
+                    <span class="section-index">01 / DISCOVER</span>
+                </div>
+
+                <form id="movie-search-form" class="search-form reveal">
+
+                    <span class="search-icon" aria-hidden="true">⌕</span>
+
+                    <input
+                        id="movie-search"
+                        type="search"
+                        placeholder="Search movies or actors..."
+                        autocomplete="off"
+                        aria-label="Search movies or actors"
+                        required
+                    >
+
+                    <button id="movie-search-button"
+                            type="submit"
+                            class="search-button">
+                        <span>Search Movies</span>
+                        <span>↗</span>
+                    </button>
+
+                </form>
+
+                <p id="movie-status"
+                   class="movie-status"
+                   aria-live="polite">
+                    Search for your favourite movie or actor.
+                </p>
+
+                <div id="movie-results" class="movie-grid"></div>
+
+            </div>
+        </section>
+
+        <!-- Prediction feature -->
+        <section class="feature-section section-padding">
+            <div class="container feature-layout">
+
+                <div class="feature-content reveal">
+
+                    <span class="section-kicker">
+                        THE SCIENCE OF SUCCESS
+                    </span>
+
+                    <h2>
+                        Can data predict
+                        <span class="gradient-text">
+                            a blockbuster?
+                        </span>
+                    </h2>
+
+                    <p>
+                        Explore how budget, rating and runtime can be
+                        used by a Decision Tree model to classify
+                        a movie's potential success.
+                    </p>
+
+                    <ul class="feature-list">
+                        <li>
+                            <span class="feature-check">✓</span>
+                            Budget and rating analysis
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            Machine Learning predictions
+                        </li>
+                        <li>
+                            <span class="feature-check">✓</span>
+                            Understandable model decisions
+                        </li>
+                    </ul>
+
+                    <a href="/prediction" class="button-primary">
+                        Try Movie Prediction
+                        <span class="button-arrow">↗</span>
+                    </a>
+
+                </div>
+
+                <div class="feature-panel reveal">
+
+                    <div class="panel-heading">
+                        <span class="panel-live">
+                            <span class="status-dot"></span>
+                            MODEL OVERVIEW
+                        </span>
+                        <span class="panel-menu">•••</span>
+                    </div>
+
+                    <div class="model-visual">
+                        <div class="model-ring ring-one"></div>
+                        <div class="model-ring ring-two"></div>
+
+                        <div class="model-core">
+                            <span>AI</span>
+                            <small>MODEL</small>
+                        </div>
+
+                        <span class="model-node node-one">BUDGET</span>
+                        <span class="model-node node-two">RATING</span>
+                        <span class="model-node node-three">RUNTIME</span>
+                    </div>
+
+                    <div class="panel-footer">
+                        <div>
+                            <span class="panel-footer-label">
+                                CLASSIFICATION
+                            </span>
+                            <strong>Decision Tree</strong>
+                        </div>
+                        <a href="/decision-tree" aria-label="Explore decision tree">
+                            ↗
+                        </a>
+                    </div>
+
+                    <p class="panel-disclaimer">
+                        Predictions depend on the trained model and
+                        its dataset; they are not guarantees of success.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Decision Tree feature -->
+        <section class="tree-section section-padding">
+            <div class="container tree-banner reveal">
+
+                <div class="tree-banner-glow"></div>
+
+                <div class="tree-banner-content">
+                    <span class="section-kicker">
+                        UNDERSTAND THE LOGIC
+                    </span>
+
+                    <h2>
+                        Behind every prediction,
+                        <span class="gradient-text">a decision.</span>
+                    </h2>
+
+                    <p>
+                        Discover entropy, Gini impurity, information gain,
+                        and how a Decision Tree reaches its classification.
+                    </p>
+
+                    <a href="/decision-tree" class="button-primary">
+                        Explore Decision Tree
+                        <span class="button-arrow">↗</span>
+                    </a>
+                </div>
+
+                <div class="tree-symbol" aria-hidden="true">
+                    <div class="tree-root">ROOT</div>
+                    <div class="tree-branches">
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="tree-children">
+                        <div class="tree-child">YES</div>
+                        <div class="tree-child">NO</div>
+                    </div>
+                    <div class="tree-leaves">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container footer-content">
+
+                <a href="/" class="brand footer-brand">
+                    <span class="brand-symbol">C</span>
+                    <span class="brand-name">
+                        CineMind<span>AI</span>
+                    </span>
+                </a>
+
+                <p>
+                    Cinema meets intelligence.
+                    Built to explore the science of movies.
+                </p>
+
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/prediction">Prediction</a>
+                    <a href="/decision-tree">Decision Tree</a>
+                    <a href="/about">About</a>
+                </div>
+
+                <span class="copyright">
+                    © 2026 CineMind AI
+                </span>
+
+            </div>
+        </footer>
+
+    </main>
+
+</body>
+</html>
+```

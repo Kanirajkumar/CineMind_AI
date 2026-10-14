@@ -1,0 +1,195 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Decision Tree Fundamentals | CineMind AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/decision_tree.css') }}">
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar">
+            <a href="/" class="logo">CineMind <span>AI</span></a>
+
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/prediction">Prediction</a>
+                <a href="/decision-tree" class="active">Decision Tree</a>
+                <a href="/about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="tree-page">
+        <section class="tree-hero">
+            <p class="eyebrow">THE MACHINE LEARNING ENGINE</p>
+            <h1>Inside the <span>Decision Tree.</span></h1>
+            <p>
+                Discover how CineMind AI learns from historical movie data
+                and uses decision rules to predict movie success.
+            </p>
+
+            <a href="/prediction" class="tree-button">Try Movie Prediction</a>
+        </section>
+
+        <section class="tree-stats">
+            <article class="tree-stat">
+                <span>Model Accuracy</span>
+                <strong>{{ accuracy }}%</strong>
+            </article>
+
+            <article class="tree-stat">
+                <span>Dataset Records</span>
+                <strong>{{ dataset_size }}</strong>
+            </article>
+
+            <article class="tree-stat">
+                <span>Algorithm</span>
+                <strong>Decision Tree</strong>
+            </article>
+        </section>
+
+        <section class="tree-section">
+            <p class="eyebrow">VISUAL MODEL</p>
+            <h2>Our Trained Decision Tree</h2>
+            <p class="section-description">
+                This visualization represents the trained model's decision
+                structure, if the training process successfully generated it.
+            </p>
+
+            <div class="tree-image-card">
+                <img
+                    src="{{ url_for('static', filename='decision_tree.png') }}"
+                    alt="Trained CineMind AI Decision Tree visualization"
+                    onerror="this.style.display='none'; document.getElementById('tree-image-error').style.display='block';"
+                >
+
+                <p id="tree-image-error" class="tree-image-error">
+                    Decision Tree image not found. Check that
+                    <strong>decision_tree.png</strong> exists inside the
+                    <strong>static</strong> folder and restart the app.
+                </p>
+            </div>
+        </section>
+
+        <section class="tree-section">
+            <p class="eyebrow">LEARN THE FUNDAMENTALS</p>
+            <h2>How does a Decision Tree work?</h2>
+
+            <div class="fundamentals-grid">
+                <article class="fundamental-card">
+                    <span class="fundamental-number">01</span>
+                    <h3>Root Node</h3>
+                    <p>
+                        The starting point of the tree. It evaluates a feature
+                        and begins splitting the data into smaller groups.
+                    </p>
+                </article>
+
+                <article class="fundamental-card">
+                    <span class="fundamental-number">02</span>
+                    <h3>Decision Branches</h3>
+                    <p>
+                        Branches represent the possible outcomes of a decision,
+                        such as whether a movie's rating is above a threshold.
+                    </p>
+                </article>
+
+                <article class="fundamental-card">
+                    <span class="fundamental-number">03</span>
+                    <h3>Leaf Nodes</h3>
+                    <p>
+                        Leaf nodes provide the final predicted class, such as
+                        likely successful or may need improvement.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="tree-section">
+            <p class="eyebrow">MATHEMATICAL FOUNDATION</p>
+            <h2>How does the tree choose a split?</h2>
+
+            <article class="formula-card">
+                <h3>1. Entropy</h3>
+                <p>
+                    Entropy measures the uncertainty or impurity in a group
+                    of training examples.
+                </p>
+
+                <div class="formula">
+                    H(S) = − Σ p(i) log₂ p(i)
+                </div>
+
+                <p class="formula-note">
+                    Lower entropy means the group is more uniform.
+                    Entropy is zero when all examples belong to one class.
+                </p>
+            </article>
+
+            <article class="formula-card">
+                <h3>2. Gini Impurity</h3>
+                <p>
+                    Gini impurity measures the chance of incorrectly classifying
+                    a randomly selected example if its class were assigned
+                    according to the group's class proportions.
+                </p>
+
+                <div class="formula">
+                    Gini(S) = 1 − Σ p(i)²
+                </div>
+
+                <p class="formula-note">
+                    Lower Gini impurity indicates a more uniform group.
+                    A pure group has a Gini value of zero.
+                </p>
+            </article>
+
+            <article class="formula-card">
+                <h3>3. Information Gain</h3>
+                <p>
+                    Information Gain measures how much a split reduces
+                    uncertainty in the data.
+                </p>
+
+                <div class="formula">
+                    IG = H(parent) − Σ [weighted child entropy]
+                </div>
+
+                <p class="formula-note">
+                    A split with higher Information Gain reduces entropy
+                    more effectively.
+                </p>
+            </article>
+
+            <p class="tree-note">
+                <strong>Important:</strong> Entropy and Gini are alternative
+                splitting criteria. The criterion actually used by CineMind AI
+                depends on the configuration in <code>model_utils.py</code>.
+                These formulas explain the concepts; they do not mean the model
+                necessarily uses all three.
+            </p>
+        </section>
+
+        <section class="tree-cta">
+            <p class="eyebrow">READY TO EXPLORE?</p>
+            <h2>Put the model to the test.</h2>
+            <p>
+                Enter a movie's budget, rating, and runtime to get a prediction
+                from the trained model.
+            </p>
+            <a href="/prediction" class="tree-button">Open Prediction Page</a>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 CineMind AI · Movie Intelligence Lab</p>
+    </footer>
+</body>
+</html>
+```
