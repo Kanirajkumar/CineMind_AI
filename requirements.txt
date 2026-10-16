@@ -6,3 +6,4 @@ scikit-learn
 matplotlib
 requests
 python-dotenv
+gunicorn
